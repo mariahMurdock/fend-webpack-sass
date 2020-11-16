@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <ol>
+    <li>npm i -D style-loader node-sass css-loader sass-loader
+    </li> <br>
+    <li>Then add this test case to the rules array in your dev webpack config:
+      <ul>
+        <li>
+          <p>
+            {
+            test: /\.scss$/,
+            use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+            }
+          </p>
+        </li>
+      </ul>
+
+    </li> <br>
+    <li>
+      <p>
+        In the last exercise, we already had converted our .css to .scss in client/style directory. Now we need to import the files in index.js. And because of the dependency tree that webpack builds, if nothing ever is imported, it’s as if it
+        doesn’t exist. So, to fix that, let’s go to client/index.js. Because of css-loader, we can add lines like this:
+      <ul>
+        <li>import './styles/resets.scss'</li>
+        <li>import './styles/base.scss'</li>
+        <li>import './styles/footer.scss'</li>
+        <li>import './styles/form.scss'</li>
+        <li>import './styles/header.scss'</li>
+      </ul>
+      </p>
+    </li> <br>
+    <li><p>Run webpack and look for your styles in the bundled js file. The included package.json file in branch 1-add-sass-loaders has been adjusted to not use webpack-dev-server. Now run:
+      <ol>
+        <li>npm run build-dev</li>
+        <li> npm run start</li>
+      </ol> <br>
+
+       so that you can verify in the browser, as shown in the snapshot below:
+       <img src="app-running-port8080.png" alt="">
+       </p>
+  </li> <br>
+</body>
+
+</html>
